@@ -1,8 +1,8 @@
 @poi_fill: #c4ffdb;
 @contour-width: 0.8;
-
+/*
 #contours_20 {
-  /* 100M */
+  //100M
  ::grn[zoom=13]{
     line-color: #c4ffdb;
     line-opacity: 0.4;
@@ -28,7 +28,7 @@
     
 #contours {
  ::grn{ 
-    /* 100M */
+    //100M
    [one_hundred = true][ele != 0]{
       [zoom=14] {
         line-width: 1; 
@@ -47,7 +47,7 @@
       }  
     }
   
-  /* 50M */
+  //50M
   [one_hundred != true][fifty = true][ele != 0]{
 	[zoom=14] {
       line-width:0.5;
@@ -65,7 +65,7 @@
         line-opacity:0.8;
       }  
    }
-   /* 10M */
+   //10M 
    [one_hundred != true][fifty != true][ele != 0]{
     	[zoom=14] {
           line-width:0.5;
@@ -82,7 +82,7 @@
   }
     }
 }
-
+*/
 
 
   

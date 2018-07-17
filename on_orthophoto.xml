@@ -11,7 +11,7 @@
   <Parameter name="scale">1</Parameter>
   <Parameter name="metatile">1</Parameter>
   <Parameter name="id"><![CDATA[on_orthophoto]]></Parameter>
-  <Parameter name="_updated">1531814558000</Parameter>
+  <Parameter name="_updated">1531819822000</Parameter>
   <Parameter name="attribution"><![CDATA[Data © OpenStreetMap (and) contributors, ODbL]]></Parameter>
   <Parameter name="name"><![CDATA[OnOrthophoto]]></Parameter>
   <Parameter name="tilejson"><![CDATA[2.0.0]]></Parameter>
@@ -160,47 +160,6 @@
     </Datasource>
   </Layer>
 
-<Style name="contours-grn" filter-mode="first" opacity="0.8">
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] != true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.2" stroke="#c4ffdb" smooth="0.5" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] != true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.5" stroke="#c4ffdb" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.8" stroke="#c4ffdb" stroke-opacity="0.8" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.8" stroke="#c4ffdb" stroke-opacity="0.8" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.5" stroke="#c4ffdb" stroke-opacity="0.8" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([one_hundred] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="1.6" stroke="#c4ffdb" stroke-opacity="0.5" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([one_hundred] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#c4ffdb" stroke-opacity="5" />
-  </Rule>
-</Style>
 <Style name="contours" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
@@ -242,7 +201,6 @@
 <Layer name="contours"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>contours</StyleName>
-    <StyleName>contours-grn</StyleName>
     <Datasource>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
@@ -257,34 +215,9 @@
     </Datasource>
   </Layer>
 
-<Style name="contours_20-grn" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] != true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke="#c4ffdb" stroke-width="0.15" stroke-opacity="0.5" stroke-linejoin="round" clip="false" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke="#c4ffdb" stroke-width="0.15" stroke-opacity="0.5" stroke-linejoin="round" clip="false" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([one_hundred] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke="#c4ffdb" stroke-width="1" stroke-opacity="0.5" stroke-linejoin="round" clip="false" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <LineSymbolizer stroke="#c4ffdb" stroke-opacity="0.4" stroke-linejoin="round" clip="false" />
-  </Rule>
-</Style>
 <Layer name="contours_20"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>contours_20-grn</StyleName>
+    
     <Datasource>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
@@ -43601,28 +43534,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43655,28 +43588,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43709,28 +43642,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43742,28 +43675,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43796,28 +43729,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43850,28 +43783,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43883,28 +43816,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43937,28 +43870,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -43991,28 +43924,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44024,28 +43957,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44078,28 +44011,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44132,28 +44065,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44165,28 +44098,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44219,28 +44152,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44273,28 +44206,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44306,28 +44239,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44360,28 +44293,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44414,28 +44347,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44447,28 +44380,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44501,28 +44434,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44555,28 +44488,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44588,28 +44521,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44642,28 +44575,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44696,28 +44629,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'trunk') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-trunk-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44729,28 +44662,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44783,28 +44716,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44837,28 +44770,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 8)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-8a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44870,28 +44803,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44924,28 +44857,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -44978,28 +44911,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 7)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-7a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45011,28 +44944,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45065,28 +44998,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45119,28 +45052,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 6)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-6a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-6.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45152,28 +45085,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45206,28 +45139,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45260,28 +45193,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 5)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-5a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-5.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45293,28 +45226,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45347,28 +45280,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45401,28 +45334,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 4)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-4a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-4.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45434,28 +45367,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45488,28 +45421,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45542,28 +45475,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 3)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-3a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-3.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45575,28 +45508,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45629,28 +45562,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45683,28 +45616,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 2)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-2a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-2.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45716,28 +45649,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45770,28 +45703,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45824,28 +45757,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([type] = 'motorway') and ([reflen] = 1)</Filter>
-    <ShieldSymbolizer file="img/shield-motorway-1a.png" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer file="img/default-1.svg" minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45857,28 +45790,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45911,28 +45844,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -45965,25 +45898,25 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = '-1')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -46006,28 +45939,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -46060,28 +45993,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes') and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -46114,25 +46047,25 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([oneway] = 'yes')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -46155,28 +46088,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'trunk')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -46188,28 +46121,28 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" minimum-distance="60" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="100" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="80" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8) and ([type] = 'motorway')</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
     <TextSymbolizer minimum-distance="70" fontset-name="fontset-1" placement="line" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.2)" halo-radius="1" size="10"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -46221,25 +46154,25 @@ way_area AS area,
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8)</Filter>
-    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="180" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8)</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8)</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([reflen] &lt;= 8)</Filter>
-    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#ffffff" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
+    <ShieldSymbolizer minimum-distance="120" size="9" fontset-name="fontset-1" fill="#000000" file="img/shield-motorway-1.png"><![CDATA[[ref]]]></ShieldSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>

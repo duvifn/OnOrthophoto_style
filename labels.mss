@@ -6,7 +6,7 @@
 
 /* Font sets are defined in palette.mss */
 
-/* 10M */
+// 10M
 #contours [one_hundred != true][fifty != true][ele != 0]{
   [zoom>=17][zoom<=19]{
     text-name:[ele];
@@ -22,7 +22,7 @@
     text-size: 8;
   }
 }
-/* 50M */
+// 50M
 #contours[fifty = true][ele != 0][zoom>=14][zoom<=17]{
   text-name:[ele] ;
   text-face-name:@sans;
@@ -39,7 +39,7 @@
   [zoom >= 16] {text-size: 10; }
 }
 
-/* 100M */
+// 100M
 #contours [one_hundred = true][fifty != true][ele != 0][zoom>=13][zoom<=17]{
   text-name:"[ele].replace('([0-9]+)\.(.+)','$1')";
   text-face-name:@sans;
@@ -389,27 +389,27 @@
   shield-name: "[ref]";
   shield-size: 9;
   shield-face-name: @sans_bold;
-  shield-fill: #fff;
+  shield-fill: #000;
   shield-file: url(img/shield-motorway-1.png);
   [type='motorway'] {
-    [reflen=1] { shield-file: url(img/shield-motorway-1a.png); }
-    [reflen=2] { shield-file: url(img/shield-motorway-2a.png); }
-    [reflen=3] { shield-file: url(img/shield-motorway-3a.png); }
-    [reflen=4] { shield-file: url(img/shield-motorway-4a.png); }
-    [reflen=5] { shield-file: url(img/shield-motorway-5a.png); }
-    [reflen=6] { shield-file: url(img/shield-motorway-6a.png); }
-    [reflen=7] { shield-file: url(img/shield-motorway-7a.png); }
-    [reflen=8] { shield-file: url(img/shield-motorway-8a.png); }
+    [reflen=1] { shield-file: url(img/default-1.svg); }
+    [reflen=2] { shield-file: url(img/default-2.svg); }
+    [reflen=3] { shield-file: url(img/default-3.svg); }
+    [reflen=4] { shield-file: url(img/default-4.svg); }
+    [reflen=5] { shield-file: url(img/default-5.svg); }
+    [reflen=6] { shield-file: url(img/default-6.svg); }
+    [reflen=7] { shield-file: url(img/default-6.svg); }
+    [reflen=8] { shield-file: url(img/default-6.svg); }
   }
   [type='trunk'] {
-    [reflen=1] { shield-file: url(img/shield-trunk-1a.png); }
-    [reflen=2] { shield-file: url(img/shield-trunk-2a.png); }
-    [reflen=3] { shield-file: url(img/shield-trunk-3a.png); }
-    [reflen=4] { shield-file: url(img/shield-trunk-4a.png); }
-    [reflen=5] { shield-file: url(img/shield-trunk-5a.png); }
-    [reflen=6] { shield-file: url(img/shield-trunk-6a.png); }
-    [reflen=7] { shield-file: url(img/shield-trunk-7a.png); }
-    [reflen=8] { shield-file: url(img/shield-trunk-8a.png); }
+    [reflen=1] { shield-file: url(img/default-1.svg); }
+    [reflen=2] { shield-file: url(img/default-2.svg); }
+    [reflen=3] { shield-file: url(img/default-3.svg); }
+    [reflen=4] { shield-file: url(img/default-4.svg); }
+    [reflen=5] { shield-file: url(img/default-5.svg); }
+    [reflen=6] { shield-file: url(img/default-6.svg); }
+    [reflen=7] { shield-file: url(img/default-6.svg); }
+    [reflen=8] { shield-file: url(img/default-6.svg); }
   }
   [zoom=11] { shield-min-distance: 120; } 
   [zoom=12] { shield-min-distance: 120; } 
