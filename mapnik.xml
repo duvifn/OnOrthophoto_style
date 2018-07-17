@@ -11,7 +11,7 @@
   <Parameter name="scale">1</Parameter>
   <Parameter name="metatile">1</Parameter>
   <Parameter name="id"><![CDATA[on_orthophoto]]></Parameter>
-  <Parameter name="_updated">1531819030000</Parameter>
+  <Parameter name="_updated">1531819822000</Parameter>
   <Parameter name="attribution"><![CDATA[Data © OpenStreetMap (and) contributors, ODbL]]></Parameter>
   <Parameter name="name"><![CDATA[OnOrthophoto]]></Parameter>
   <Parameter name="tilejson"><![CDATA[2.0.0]]></Parameter>
@@ -160,47 +160,6 @@
     </Datasource>
   </Layer>
 
-<Style name="contours-grn" filter-mode="first" opacity="0.8">
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] != true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.2" stroke="#c4ffdb" smooth="0.5" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] != true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.5" stroke="#c4ffdb" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.8" stroke="#c4ffdb" stroke-opacity="0.8" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.8" stroke="#c4ffdb" stroke-opacity="0.8" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="0.5" stroke="#c4ffdb" stroke-opacity="0.8" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([one_hundred] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="1.6" stroke="#c4ffdb" stroke-opacity="0.5" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([one_hundred] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#c4ffdb" stroke-opacity="5" />
-  </Rule>
-</Style>
 <Style name="contours" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
@@ -242,7 +201,6 @@
 <Layer name="contours"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>contours</StyleName>
-    <StyleName>contours-grn</StyleName>
     <Datasource>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
@@ -257,34 +215,9 @@
     </Datasource>
   </Layer>
 
-<Style name="contours_20-grn" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] != true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke="#c4ffdb" stroke-width="0.15" stroke-opacity="0.5" stroke-linejoin="round" clip="false" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([one_hundred] != true) and ([fifty] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke="#c4ffdb" stroke-width="0.15" stroke-opacity="0.5" stroke-linejoin="round" clip="false" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([one_hundred] = true) and ([ele] != 0)</Filter>
-    <LineSymbolizer stroke="#c4ffdb" stroke-width="1" stroke-opacity="0.5" stroke-linejoin="round" clip="false" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <LineSymbolizer stroke="#c4ffdb" stroke-opacity="0.4" stroke-linejoin="round" clip="false" />
-  </Rule>
-</Style>
 <Layer name="contours_20"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>contours_20-grn</StyleName>
+    
     <Datasource>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
