@@ -5,7 +5,7 @@
  */
 
 /* Font sets are defined in palette.mss */
-
+/*
 // 10M
 #contours [one_hundred != true][fifty != true][ele != 0]{
   [zoom>=17][zoom<=19]{
@@ -50,7 +50,7 @@
   [zoom >= 16] {text-size: 10; }
 }
 
-
+*/
 
 /* ================================================================== */
 /* PLACE NAMES
