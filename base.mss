@@ -10,14 +10,9 @@
 /* LANDUSE & LANDCOVER
 /* ================================================================== */
 
-Map { background-color: @water; }
-#land-low[zoom>=0][zoom<10],
-#land-high[zoom>=10]{
-   polygon-fill: @land;
-   polygon-gamma: 0.75;   
-  }
+//Map { background-color: @water; }
 
-#landuse_gen0[zoom>3][zoom<=9],
+/*#landuse_gen0[zoom>3][zoom<=9],
 #landuse_gen1[zoom>9][zoom<=12],
 #landuse_residental[zoom>13] {
   [type='cemetery']      { polygon-fill: @cemetery; }
@@ -68,9 +63,9 @@ Map { background-color: @water; }
   [zoom>11][zoom<=14] { polygon-pattern-file:url(img/marsh-16.png); }
   [zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
   }
-
+*/
 /* ---- BUILDINGS ---- */
-#buildings[zoom>=12][zoom<=16] {
+/*#buildings[zoom>=12][zoom<=16] {
   polygon-fill:@building;
   [zoom>=14] {
     line-color:darken(@building,5%);
@@ -92,85 +87,17 @@ Map { background-color: @water; }
 #buildings[zoom>=17][type = 'hedge'] {
   building-fill:@wooded;
   building-height:1.25;
-}
-
-#hillshade_90::z13[zoom=13] {
-  image-filters: agg-stack-blur(1,1);
-}
-
-#hillshade_39::z14[zoom=14] {
-  image-filters: agg-stack-blur(3,3);
-}
-
-#hillshade_30::z15[zoom=15] {
-  image-filters: agg-stack-blur(8,8);
-}
-
-#hillshade_30::z16[zoom=16] {
-  image-filters: agg-stack-blur(14,14);
-}
-
-#hillshade_30::z17[zoom=17] {
-  image-filters: agg-stack-blur(24,24);
-}
-#hillshade_30::z18[zoom=18] {
-  image-filters: agg-stack-blur(24,24);
-}
-
-#hillshade_5000 {
-   [zoom>=1][zoom<=4]{
-    raster-comp-op: multiply;
-    raster-scaling: bilinear;
-    raster-opacity:0.32;
-  }
-}
-
-#hillshade_1000 {
-   [zoom>=5][zoom<=6]{
-    raster-comp-op: multiply;
-    raster-scaling: bilinear;
-    raster-opacity:0.32;
-  }
-}
-
-#hillshade_700 {
-   [zoom>=7][zoom<=8]{
-    raster-comp-op: multiply;
-    raster-scaling: bilinear;
-    raster-opacity:0.32;
-  }
-}
-
-#hillshade_90 {
-  [zoom>=9][zoom<=12]{
-    raster-comp-op: multiply;
-    raster-scaling: bilinear;
-    raster-opacity:0.32;
-   }
-  [zoom>=13][zoom<=14]{
-    raster-comp-op: grain-merge;
-    raster-scaling: bilinear;
-    raster-opacity:0.6;
-  }
-}
-
-#hillshade_30 {
-  [zoom>=15][zoom<=18]{
-    raster-comp-op: grain-merge;
-    raster-scaling: bilinear;
-    raster-opacity:0.6;
-  }
-}
+}*/
 /* ================================================================== */
 /* WATER AREAS
 /* ================================================================== */
-
+/*
 #water_gen0[zoom>3][zoom<=9],
 #water_gen1[zoom>9][zoom<=12],
 #water[zoom>12] {
   polygon-fill: @water;
 }
-
+*/
 /* ================================================================== */
 /* WATER WAYS
 /* ================================================================== */
@@ -254,7 +181,7 @@ Map { background-color: @water; }
     [zoom=4] { line-opacity: 0.4; }
   /* Remove any maritime borders. Unfortunatly this is the only way to do this */
   ::maritime[maritime='yes'][zoom>1]{
-    line-color: rgb(163,194,223);
+    line-color: #345c8e;
     line-width:4;
     line-opacity: 1.0;
   }
@@ -296,22 +223,13 @@ Map { background-color: @water; }
 /* INFRASTRUCTURE
 /* ================================================================== */
 #airports {
-    ::poly {
-    	[zoom>=10][zoom <= 13] {
-      		polygon-fill:#cdcdcd;
-    		line-color:darken(@land,10%);
-    		line-width:0.6;
-            [zoom = 12] { polygon-opacity: 0.7; }
-            [zoom = 13] { polygon-opacity: 0.5; }
-         }
-    }
     ::points {
       [zoom>=10][zoom < 14][aeroway = 'aerodrome']['access' != 'private']['icao' != null]['iata' != null],
       [aeroway = 'aerodrome'][zoom >= 11][zoom < 14]{
           marker-height: 10;
           marker-width: 10;
           marker-file: url('res/airport-24.svg');
-          marker-fill: #aaa;
+          marker-fill: #cc0099;
           marker-line-opacity:0.6;
           //marker-allow-overlap:true;
           marker-placement: interior;
@@ -333,7 +251,7 @@ Map { background-color: @water; }
 /* ================================================================== */
 /* BARRIER LINES
 /* ================================================================== */
-
+/*
 #barrier_lines[zoom>=17][stylegroup = 'gate'] {
   line-width:2.5;
   line-color:#aab;
@@ -351,3 +269,4 @@ Map { background-color: @water; }
   line-color:darken(@park,5%);
 
 }
+*/

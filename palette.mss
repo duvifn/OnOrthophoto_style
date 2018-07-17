@@ -18,7 +18,11 @@
 /* ================================================================== */
 
 /* directory to load fonts from in addition to the system directories */
-Map { font-directory: url(./fonts); }
+Map { 
+  font-directory: url(./fonts);
+  buffer-size:256;
+  background-color: transparent;
+}
 
 /* set up font sets for various weights and styles */
 @sans_lt:       "Open Sans Regular", "DejaVu Sans Book", "Arundina Sans Regular", "Padauk Regular", "Khmer OS Metal Chrieng Regular",
@@ -94,28 +98,28 @@ Map { font-directory: url(./fonts); }
  */
 
 @motorway_line:     #aaa; 
-@motorway_fill:     #aaa;
-@motorway_case:     #aaa; 
+@motorway_fill :    #efb61e;
+@motorway_case:     black; 
 
 @trunk_line:        #aaa; 
-@trunk_fill:        #aaa; 
-@trunk_case:        #aaa; 
+@trunk_fill:        #efb61e; 
+@trunk_case:        black; 
 
 @primary_line:      #aaa; 
-@primary_fill:      #aaa; 
-@primary_case:      #aaa; 
+@primary_fill:      #fff;// #efb61e; 
+@primary_case:      black; 
 
 @secondary_line:    #aaa; 
-@secondary_fill:    #aaa; 
-@secondary_case:    #aaa; 
+@secondary_fill:    #fff; 
+@secondary_case:    black; 
 
 @standard_line:     #aaa; 
-@standard_fill:     #aaa; 
-@standard_case:     #aaa; 
+@standard_fill:     #fff; 
+@standard_case:     black; 
 
 @pedestrian_line:   #aaa; 
-@pedestrian_fill:   #aaa; 
-@pedestrian_case:   #aaa;
+@pedestrian_fill:   #fff; 
+@pedestrian_case:   black;
 
 @cycle_line:        @standard_line;
 @cycle_fill:        #FAFAF5;
@@ -139,34 +143,26 @@ Map { font-directory: url(./fonts); }
 
 /* We set up a default halo color for places so you can edit them all
    at once or override each individually. */
-@place_halo:        fadeout(#fff,34%);
+@place_halo:        #222;
+@place_text:        #fff;
 
-@country_text:      rgb(255,255,255);
-@country_halo:      @place_halo;
+@country_halo: fadeout(@place_halo,90);
+@state_halo: fadeout(@place_halo,90);
+@city_halo: fadeout(#333,90);
+@town_halo: fadeout(@place_halo,90);
+@village_halo: fadeout(@place_halo,90);
+@neigh_halo: fadeout(@place_halo,80); // also for suburbs
+@water_halo: fadeout(@place_halo,90);
+@poi_halo: fadeout(#000,90);
+@rail_halo: fadeout(@place_halo,85);
+@airport_halo: fadeout(@place_halo,85);
 
-@state_text:        rgb(255,255,255);
-@state_halo:        @place_halo;
+@poi_fill: #c4ffdb;
 
-@city_text:         rgb(45,45,45);
-@city_halo:         rgb(100,100,100);
+@road_halo:         fadeout(#222,80);
+@road_text:         #fff;
 
-@town_text:         #666;
-@town_halo:         @place_halo;
-
-@poi_text:          #888;
-
-@road_text:         #777;
-@road_halo:         #fff;
-
-@other_text:        #888;
-@other_halo:        @place_halo;
-
-@locality_text:     #aaa;
-@locality_halo:     @land;
-
-/* Also used for other small places: hamlets, suburbs, localities */
-@village_text:      #888;
-@village_halo:      @place_halo;
+@marine_text: #445;
 
 /* ****************************************************************** */
 
