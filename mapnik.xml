@@ -11,7 +11,7 @@
   <Parameter name="scale">1</Parameter>
   <Parameter name="metatile">1</Parameter>
   <Parameter name="id"><![CDATA[on_orthophoto]]></Parameter>
-  <Parameter name="_updated">1531820057000</Parameter>
+  <Parameter name="_updated">1533718452000</Parameter>
   <Parameter name="attribution"><![CDATA[Data © OpenStreetMap (and) contributors, ODbL]]></Parameter>
   <Parameter name="name"><![CDATA[OnOrthophoto]]></Parameter>
   <Parameter name="tilejson"><![CDATA[2.0.0]]></Parameter>
@@ -47135,6 +47135,13 @@ ELSE tags -> 'name:en'  END as name
     <MinScaleDenominator>1500000</MinScaleDenominator>
     <Filter>([type] = 'city')</Filter>
     <TextSymbolizer size="9" fontset-name="fontset-1" placement="point" fill="#ffffff" halo-fill="rgba(51, 51, 51, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
+    <MarkersSymbolizer width="4" fill="#ffffff" stroke-width="1" stroke="rgba(0, 0, 0, 0.5)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([type] = 'city')</Filter>
+    <TextSymbolizer fontset-name="fontset-1" placement="point" fill="#ffffff" halo-fill="rgba(51, 51, 51, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2" size="11"><![CDATA[[name]]]></TextSymbolizer>
     <MarkersSymbolizer width="4" fill="#ffffff" stroke-width="1" stroke="rgba(0, 0, 0, 0.5)" />
   </Rule>
 </Style>
