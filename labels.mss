@@ -140,7 +140,7 @@
 
 /* ---- Cities ------------------------------------------------------ */
 
-#place::city[type='city'][zoom>=8][zoom<=15] {
+#place::city[type='city'][zoom>=8][zoom<=16] {
   
   /*::inner {
     [zoom>=10] {
