@@ -11,7 +11,7 @@
   <Parameter name="scale">1</Parameter>
   <Parameter name="metatile">1</Parameter>
   <Parameter name="id"><![CDATA[on_orthophoto]]></Parameter>
-  <Parameter name="_updated">1533718452000</Parameter>
+  <Parameter name="_updated">1533720846000</Parameter>
   <Parameter name="attribution"><![CDATA[Data © OpenStreetMap (and) contributors, ODbL]]></Parameter>
   <Parameter name="name"><![CDATA[OnOrthophoto]]></Parameter>
   <Parameter name="tilejson"><![CDATA[2.0.0]]></Parameter>
@@ -47194,13 +47194,13 @@ ELSE tags -> 'name:he'  END as name
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
     <Filter>([type] = 'country')</Filter>
-    <TextSymbolizer size="12" character-spacing="1" wrap-width="80" line-spacing="2" fontset-name="fontset-0" placement="point" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="12" character-spacing="1" wrap-width="40" line-spacing="2" fontset-name="fontset-0" placement="point" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
     <Filter>([type] = 'country')</Filter>
-    <TextSymbolizer size="11" wrap-width="50" line-spacing="1" fontset-name="fontset-0" placement="point" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="11" wrap-width="30" line-spacing="1" fontset-name="fontset-0" placement="point" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
@@ -47212,7 +47212,7 @@ ELSE tags -> 'name:he'  END as name
     <MaxScaleDenominator>50000000</MaxScaleDenominator>
     <MinScaleDenominator>25000000</MinScaleDenominator>
     <Filter>([type] = 'country')</Filter>
-    <TextSymbolizer size="11" wrap-width="50" fontset-name="fontset-0" placement="point" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="11" wrap-width="30" fontset-name="fontset-0" placement="point" fill="#ffffff" halo-fill="rgba(34, 34, 34, 0.1)" halo-radius="2" halo-rasterizer="fast" halo-comp-op="minus" margin="2"><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
 </Style>
 <Layer name="place"
